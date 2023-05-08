@@ -13,6 +13,23 @@ class CourseController {
 
     }
 
+    //GET /course/create
+    create(req, res, next) {
+        res.render('courses/create');
+    }
+
+    //GET /course/store
+    store(req, res, next) {
+        const formData = req.body;
+        formData.image = `https://img.youtube.com/vi/${req.body.videoId}/sddefault.jpg`;
+        const course = new Course(formData);
+        course.save()
+            .then(() => res.redirect('/'))
+            .catch(error => {
+
+            });
+    }
+
 }
 
 module.exports = new CourseController();
