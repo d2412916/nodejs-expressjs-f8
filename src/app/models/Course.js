@@ -2,7 +2,10 @@ const mongoose = require('mongoose');
 const slug = require('mongoose-slug-updater');
 const mongooseDelete = require('mongoose-delete');
 
+mongoose.set("strictQuery", true);
+
 const Schema = mongoose.Schema;
+
 
 const Course = new Schema({
     name: { type: String, maxLength: 255 },
