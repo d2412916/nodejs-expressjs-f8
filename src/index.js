@@ -8,6 +8,18 @@ const handlebars = require('express-handlebars');
 const route = require('./routes');
 const db = require('./config/db');
 
+
+// const sass = require('node-sass');
+// const fs = require('fs');
+
+// sass.render({
+//   file: __dirname + '/resources/scss/app.scss',
+//   outputStyle: 'compressed'
+// }, (err, result) => {
+//   if (err) throw err;
+//   fs.writeFileSync(__dirname + '/public/css/styles.css', result.css);
+// });
+
 //connect to db
 db.connect();
 
